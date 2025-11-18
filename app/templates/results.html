@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PurePill - Analysis Results</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    @layer utilities {
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            // New Palette
+            "coral-red": "#EE6055",
+            "teal-green": "#60D394",
+            "light-green": "#AAF683",
+            "light-orange": "#FFD97D",
+            "salmon-pink": "#FF9B85",
+            // Theme Colors
+            "primary": "#60D394", 
+            "background-light": "#FFF9F1",
+            "background-dark": "#1F1D1A",
+            "text-light": "#3F3C35",
+            "text-dark": "#FBF8F2",
+            "card-light": "#FFFFFF",
+            "card-dark": "#292723",
+            "border-light": "#EDE8E1",
+            "border-dark": "#424039",
+            "subtle-light": "#F7F1E7",
+            "subtle-dark": "#36332E",
+            // Status Colors (from new palette)
+            "success": "#60D394", 
+            "warning": "#FFD97D",
+            "danger": "#EE6055",
+            "success-text": "#166534",
+            "warning-text": "#854D0E",
+            "danger-text": "#991B1B"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 sm:px-6 lg:px-8">
+<div class="layout-content-container flex flex-col w-full max-w-4xl flex-1 px-4">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clipPath>
+</defs>
+</svg>
+</div>
+<h2 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em]">PurePill</h2>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4 sm:gap-6">
+<nav class="hidden sm:flex items-center gap-6">
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary" href="#">Home</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">New Test</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary" href="#">History</a>
+</nav>
+<div class="h-6 w-px bg-border-light dark:bg-border-dark hidden sm:block"></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture with a colorful abstract background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKiUd32Ls3Dm4AINPcnIe1gNj8POmiveosJ3RoyHvafoMxCSt-4VgcOqLXg4dXfhaB7BPpzRM_UsDU5rRGo6lyWvsB5Hac-Ua6Hc0mRZ8fwr71h3NtC3GVzkMV-O9IyNK1FQNVM72vVmYN30YiN1j59HG-pqm4m2MGqlyyyUDjVyWHjMyHd-wwR7H-QiEzvO9rIQ9yibMwjFrYMwCPQx54mXIf_LVNri8yd55Z4VxzPJH8vhaMdDdkbNX8g25FJMA2-HDUF6wvU8Y");'></div>
+</div>
+</header>
+<main class="flex flex-col gap-8 py-8">
+<div class="flex flex-wrap items-start justify-between gap-4 px-4 sm:px-6">
+<div>
+<p class="text-text-light dark:text-text-dark text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">Analysis Results</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-lg">Paracetamol 500mg</p>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-salmon-pink text-gray-800 text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined !text-lg">download</span>
+<span class="truncate">Download PDF</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-light-orange text-gray-800 text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined !text-lg">share</span>
+<span class="truncate">Share Results</span>
+</button>
+</div>
+</div>
+<div class="px-4 sm:px-6">
+<div class="flex flex-col items-center justify-center gap-3 rounded-xl border border-teal-green/20 dark:border-teal-green/30 bg-teal-green/10 dark:bg-teal-green/10 p-6 text-center">
+<div class="flex items-center gap-2 text-success-text dark:text-teal-green">
+<span class="material-symbols-outlined !text-4xl">verified_user</span>
+<p class="text-3xl font-bold tracking-tight">Safe to Consume</p>
+</div>
+<p class="max-w-prose text-sm text-text-light/80 dark:text-text-dark/80">The tested sample appears to be of high quality with no major concerns detected. All parameters are within acceptable limits.</p>
+</div>
+</div>
+<div class="p-4 sm:p-6 bg-card-light dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark">
+<div class="flex flex-col md:flex-row items-stretch justify-between gap-6">
+<div class="flex flex-col gap-2 flex-[2_2_0px]">
+<p class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Overall Quality Verdict</p>
+<p class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight">High Quality Predicted</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-base font-normal leading-normal">A detailed breakdown of the analysis conducted on the sample, including physical and chemical properties.</p>
+</div>
+<div class="flex-1 min-w-[200px] h-48 md:h-auto bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Scanned image of a white, round paracetamol pill on a neutral background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOR3lVb6wL5PBGegPoP8CEEurdRnlNn-RQBHVVw6uG0i03mE5eQAjcrgQTVIxZQw5WakWBo42OH6tfM8aRqQxXBYo4JGFje72dbJn0on-rNT0BgYTBVK4cOLGDmuVX5XMchKWQMsyrtQ9GPgG9FFHSrzGDE-g9vnDr5Gybx7AjLzM_scygwyEIlZMlawTnbfmlzGmtYm3BRHSEozjY0BcT4a09OxwviR5kx41MEAuXvalOufM6ykdGaq8hr-hy6E81uMdpG_NvY5Y");'></div>
+</div>
+</div>
+<div class="flex flex-col gap-3 px-4 sm:px-6">
+<details class="flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark px-4 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-coral-red">pill</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Pill Identification</p>
+</div>
+<span class="material-symbols-outlined text-text-light dark:text-text-dark group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pb-4 text-sm text-text-light/70 dark:text-text-dark/70 border-t border-border-light dark:border-border-dark pt-4">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div><strong class="font-semibold text-text-light dark:text-text-dark">Detected Shape:</strong> Round</div>
+<div><strong class="font-semibold text-text-light dark:text-text-dark">Detected Color:</strong> White</div>
+<div><strong class="font-semibold text-text-light dark:text-text-dark">Markings:</strong> Scored</div>
+<div class="sm:col-span-3"><strong class="font-semibold text-text-light dark:text-text-dark">Confidence Score:</strong> <span class="text-success-text dark:text-teal-green font-bold">98.5%</span></div>
+</div>
+</div>
+</details>
+<details class="flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark px-4 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-coral-red">badge</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Label &amp; Expiry Information</p>
+</div>
+<span class="material-symbols-outlined text-text-light dark:text-text-dark group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pb-4 text-sm text-text-light/70 dark:text-text-dark/70 border-t border-border-light dark:border-border-dark pt-4 space-y-2">
+<p><strong class="font-semibold text-text-light dark:text-text-dark">Manufacturer:</strong> Pharma Inc.</p>
+<p><strong class="font-semibold text-text-light dark:text-text-dark">Batch Number:</strong> P78-A1138</p>
+<div class="flex items-center gap-2"><strong class="font-semibold text-text-light dark:text-text-dark">Expiry Date:</strong> 12/2026 <span class="inline-flex items-center rounded-full bg-teal-green/20 px-2 py-1 text-xs font-medium text-success-text dark:text-teal-green dark:bg-teal-green/10">Verified</span></div>
+</div>
+</details>
+<details class="flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark px-4 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-coral-red">allergy</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Allergen Information</p>
+</div>
+<span class="material-symbols-outlined text-text-light dark:text-text-dark group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pb-4 text-sm text-text-light/70 dark:text-text-dark/70 border-t border-border-light dark:border-border-dark pt-4">
+<p>No common allergens detected in the pill's composition.</p>
+</div>
+</details>
+<details class="flex flex-col rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark px-4 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-coral-red">science</span>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Salt &amp; Composition Analysis</p>
+</div>
+<span class="material-symbols-outlined text-text-light dark:text-text-dark group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pb-4 text-sm text-text-light/70 dark:text-text-dark/70 border-t border-border-light dark:border-border-dark pt-4">
+<p class="mb-4">Analysis of the active ingredients compared to the labeled dosage.</p>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-semibold text-text-light dark:text-text-dark">Paracetamol</span>
+<span class="text-text-light/80 dark:text-text-dark/80">498mg / 500mg</span>
+</div>
+<div class="w-full bg-subtle-light dark:bg-subtle-dark rounded-full h-2.5">
+<div class="bg-light-green h-2.5 rounded-full" style="width: 99.6%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-semibold text-text-light dark:text-text-dark">Excipients &amp; Fillers</span>
+<span class="text-text-light/80 dark:text-text-dark/80">Within tolerance</span>
+</div>
+<div class="w-full bg-subtle-light dark:bg-subtle-dark rounded-full h-2.5">
+<div class="bg-light-green h-2.5 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>

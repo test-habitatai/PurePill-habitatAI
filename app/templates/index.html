@@ -30,6 +30,7 @@
               tertiary: "#AAF683", // Light Green
               "accent-yellow": "#FFD97D", // Light Orange
               "accent-peach": "#FF9B85", // Peach
+              "brand-green": "#49B872", // New brand green color
               "background-light": "#FAF9F6",
               "background-dark": "#101922",
             },
@@ -51,48 +52,51 @@
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
       }
+      
+      /* Smooth scrolling for the whole page */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Optional: Add some padding to account for fixed header */
+      section {
+        scroll-margin-top: 80px;
+      }
     </style>
   </head>
 
   <body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100">
     <!-- ====== HEADER ====== -->
     <header
-      class="sticky top-0 z-10 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-sm"
+      class="sticky top-0 z-10 w-full bg-brand-green dark:bg-brand-green shadow-sm"
     >
       <div
         class="flex w-full items-center justify-between px-8 sm:px-16 lg:px-24 py-5"
       >
         <div class="flex items-center gap-3">
-          <div class="size-10 text-primary">
-            <svg
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z"
-              ></path>
-            </svg>
-          </div>
-          <h1 class="text-gray-900 dark:text-white text-2xl font-bold">
+          <img 
+            src="../static/logo.png" 
+            alt="PurePill Logo" 
+            class="h-14 w-auto"
+          />
+          <h1 class="text-white text-2xl font-bold">
             PurePill
           </h1>
         </div>
-
         <div class="hidden md:flex flex-1 justify-end items-center gap-10">
           <nav class="flex items-center gap-10 text-lg font-semibold">
-            <a href="#features" class="hover:text-primary transition-colors"
+            <a href="#features" class="text-white hover:text-gray-200 transition-colors"
               >Features</a
             >
-            <a href="#why-us" class="hover:text-primary transition-colors"
+            <a href="#why-us" class="text-white hover:text-gray-200 transition-colors"
               >Why Us</a
             >
-            <a href="#try-it" class="hover:text-primary transition-colors"
+            <a href="#try-it" class="text-white hover:text-gray-200 transition-colors"
               >Try It</a
             >
           </nav>
           <button
-            class="rounded-lg bg-primary text-white px-6 py-2 text-base font-semibold hover:opacity-90 transition"
+            class="rounded-lg bg-white text-brand-green px-6 py-2 text-base font-semibold hover:bg-gray-100 transition"
           >
             Get Started
           </button>
@@ -100,7 +104,7 @@
 
         <div class="md:hidden">
           <span
-            class="material-symbols-outlined text-gray-800 dark:text-gray-300 text-3xl"
+            class="material-symbols-outlined text-white text-3xl"
             >menu</span
           >
         </div>
@@ -108,261 +112,468 @@
     </header>
 
     <!-- ====== HERO SECTION ====== -->
-    <main class="flex flex-col gap-20">
       <section
-        class="pt-24 pb-28 px-8 sm:px-16 lg:px-24 bg-background-light dark:bg-background-dark"
+        class="pt-32 pb-28 px-8 sm:px-16 lg:px-24 flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
+        style="min-height: 80vh; background-image: url('../static/hero.jpg'); padding-top: 120px;"
       >
-        <div
-          class="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-16"
-        >
-          <!-- Left Text Block -->
-          <div class="flex flex-col gap-8 lg:w-1/2">
-            <h1
-              class="text-5xl sm:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight"
-            >
-              Verify Your Medicine with Confidence.
-            </h1>
-            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-              PurePill uses AI to analyze your medication’s quality, safety, and
-              authenticity from a single photo.
-            </p>
-            <button
-              class="mt-4 rounded-lg bg-primary text-white px-5 py-2 text-base font-semibold hover:opacity-90 transition"
-            >
-              Analyze Your Pill Now
-            </button>
-          </div>
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+        
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-8 relative z-10">
+          
+          <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight">
+            Verify Your Medicine with Confidence.
+          </h1>
 
-          <!-- Right Image Block -->
-          <div
-            class="lg:w-1/2 w-full aspect-[4/3] rounded-2xl bg-center bg-cover shadow-lg"
-            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcne3Is1XMYjV8zAO2kaW1KBPDr1bOOaXEvv_5GB02Ir5Rb56bt_z4CLhgXeM-NNF4wY3l-zukBlGLsmoNm6EwpsLS4Dp0yQ33j1BpdV-VQgLHqFLky2VyvNGwnQuuPL9oyaWuz45lUyqNnUOPyINzXQ4R2zC3YhpldNkePQNeVdZdJpm-zR_FfO0sbep6Tk3FPcG0Bi54UJVcm7pFbQlvS58UQ-wiNN9z9sHpuaUrjhv5jFPdxqt-eyr72gqfj0sKb_FLEmzFF90");'
-          ></div>
+          <p class="text-white/90 text-lg leading-relaxed max-w-2xl">
+            PurePill uses AI to analyze your medication's quality, safety, and
+            authenticity from a single photo.
+          </p>
+
+          <button
+            class="mt-4 rounded-lg bg-brand-green text-white px-5 py-2 text-base font-semibold hover:opacity-90 transition"
+          >
+           <a href="#try-it" class="text-white hover:text-gray-200 transition-colors"
+              >Analyze Your Pill</a
+            >
+          </button>
+
         </div>
       </section>
     </main>
-  </body>
-</html>
-<!-- ====== MAIN CONTENT SECTIONS ====== -->
-<main class="flex flex-col gap-20">
 
-  <!-- ====== FEATURES SECTION ====== -->
-<section class="flex flex-col gap-10 px-8 sm:px-16 lg:px-32 py-16" id="features">
-  <div class="flex flex-col gap-4 text-center">
-    <h2 class="text-gray-900 dark:text-white tracking-tight text-4xl font-bold leading-tight max-w-[720px] mx-auto">
-      AI-Powered Pill Analysis
-    </h2>
-    <p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto">
-      Our advanced technology provides a comprehensive check of your medication from a single photo, ensuring your peace of mind.
-    </p>
-  </div>
+    <!-- ====== MAIN CONTENT SECTIONS ====== -->
+    <main class="flex flex-col gap-20">
 
-  <!-- Cards Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-stretch">
-    
-    <!-- Card 1 -->
-<div class="flex flex-col items-start gap-3 rounded-xl bg-[#EE6055]/10 dark:bg-[#EE6055]/20 p-8 w-[90%] mx-auto h-[300px]">
-  <div class="text-primary dark:text-primary">
-    <span class="material-symbols-outlined text-4xl">fullscreen</span>
-  </div>
-  <div class="flex flex-col gap-7">
-    <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Pill Shape Detection</h3>
-    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
-      Our AI identifies your medication based on its unique physical characteristics like shape, color, and imprints.
-    </p>
-  </div>
-</div>
-
-<!-- Card 2 -->
-<div class="flex flex-col items-start gap-3 rounded-xl bg-[#60D394]/10 dark:bg-[#60D394]/20 p-8 w-[90%] mx-auto h-[300px]">
-  <div class="text-secondary dark:text-secondary">
-    <span class="material-symbols-outlined text-4xl">document_scanner</span>
-  </div>
-  <div class="flex flex-col gap-2">
-    <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Label & Expiry Reading (OCR)</h3>
-    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
-      Automatically read crucial details like brand name, dosage, and expiration date directly from the pill's label.
-    </p>
-  </div>
-</div>
-
-<!-- Card 3 -->
-<div class="flex flex-col items-start gap-3 rounded-xl bg-[#FFD97D]/20 dark:bg-[#FFD97D]/20 p-8 w-[90%] mx-auto h-[300px]">
-  <div class="text-accent-yellow dark:text-accent-yellow">
-    <span class="material-symbols-outlined text-4xl">warning</span>
-  </div>
-  <div class="flex flex-col gap-2">
-    <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Potential Allergen Alerts</h3>
-    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
-      Scans the medication’s composition to flag any substances linked to allergies.
-    </p>
-  </div>
-</div>
-
-<!-- Card 4 -->
-<div class="flex flex-col items-start gap-3 rounded-xl bg-[#AAF683]/10 dark:bg-[#AAF683]/20 p-8 w-[90%] mx-auto h-[300px]">
-  <div class="text-tertiary dark:text-tertiary">
-    <span class="material-symbols-outlined text-4xl">science</span>
-  </div>
-  <div class="flex flex-col gap-8">
-    <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Salt & Quality Analysis</h3>
-    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
-      Predictive analysis of active pharmaceutical ingredients and their expected quality for better assurance.
-    </p>
-  </div>
-</div>
-
-
-  </div>
-</section>
-
-<!-- ====== WHY US SECTION ====== -->
-<section class="px-12 sm:px-20 lg:px-40 py-24" id="why-us">
-  <div class="flex flex-col md:flex-row gap-16 items-center">
-    <!-- IMAGE -->
-    <div class="flex-1">
-      <div class="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-2xl bg-center bg-cover shadow-lg"
-        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyreb7rmp4Res5j3U8s7Qfldsuniczx3hnHDkZaC8UVDOA-B_UBWIaotx97-Z57XDWrqNooIT0Fix_BxRnlBDZBOjYuxjg8g_coV7UAjoCij1sGm-UWADIjMnJukDHRHKiE0PMjVZnAE2Sx-6XKwTdp8e8gVi_LlFbktzwMcaR08LP1qehhpPkfmZWbRZzOPVR0BRUq6GiwO0Zh37LL6U8OAp3iJ1pZoQMP5qDMD2w4lvcaSsJw53Ao5kQ--6PGw-Vyk5xpSRKbR8");'>
-      </div>
-    </div>
-
-    <!-- TEXT -->
-    <div class="flex-1 flex flex-col gap-8">
-      <div class="flex flex-col gap-3">
-        <h2 class="text-gray-900 dark:text-white text-4xl sm:text-5xl font-extrabold leading-tight">
-          Why Choose PurePill?
+      <!-- ====== FEATURES SECTION ====== -->
+    <section class="flex flex-col gap-10 px-8 sm:px-16 lg:px-32 py-16" id="features">
+      <div class="flex flex-col gap-4 text-center">
+        <h2 class="text-gray-900 dark:text-white tracking-tight text-4xl font-bold leading-tight max-w-[720px] mx-auto">
+          AI-Powered Pill Analysis
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 text-lg sm:text-xl leading-relaxed">
-          Empowering you with the knowledge to ensure your medication is safe and effective.
+        <p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto">
+          Our advanced technology provides a comprehensive check of your medication from a single photo, ensuring your peace of mind.
         </p>
       </div>
 
-      <div class="space-y-6">
-        <div class="flex items-start gap-5">
-          <span class="material-symbols-outlined text-primary text-3xl mt-1">verified</span>
-          <div>
-            <h3 class="text-gray-900 dark:text-white text-xl font-semibold">Unmatched Accuracy</h3>
-            <p class="text-gray-600 dark:text-gray-400 text-base">
-              Powered by cutting-edge AI for reliable and precise analysis.
-            </p>
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-stretch">
+        
+        <!-- Card 1 -->
+    <div class="flex flex-col items-start gap-3 rounded-xl bg-[#EE6055]/10 dark:bg-[#EE6055]/20 p-8 w-[90%] mx-auto h-[300px]">
+      <div class="text-primary dark:text-primary">
+        <span class="material-symbols-outlined text-4xl">fullscreen</span>
+      </div>
+      <div class="flex flex-col gap-7">
+        <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Pill Shape Detection</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+          Our AI identifies your medication based on its unique physical characteristics like shape, color, and imprints.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="flex flex-col items-start gap-3 rounded-xl bg-[#60D394]/10 dark:bg-[#60D394]/20 p-8 w-[90%] mx-auto h-[300px]">
+      <div class="text-secondary dark:text-secondary">
+        <span class="material-symbols-outlined text-4xl">document_scanner</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Label & Expiry Reading (OCR)</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+          Automatically read crucial details like brand name, dosage, and expiration date directly from the pill's label.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="flex flex-col items-start gap-3 rounded-xl bg-[#FFD97D]/20 dark:bg-[#FFD97D]/20 p-8 w-[90%] mx-auto h-[300px]">
+      <div class="text-accent-yellow dark:text-accent-yellow">
+        <span class="material-symbols-outlined text-4xl">warning</span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Potential Allergen Alerts</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+          Scans the medication's composition to flag any substances linked to allergies.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="flex flex-col items-start gap-3 rounded-xl bg-[#AAF683]/10 dark:bg-[#AAF683]/20 p-8 w-[90%] mx-auto h-[300px]">
+      <div class="text-tertiary dark:text-tertiary">
+        <span class="material-symbols-outlined text-4xl">science</span>
+      </div>
+      <div class="flex flex-col gap-8">
+        <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Salt & Quality Analysis</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+          Predictive analysis of active pharmaceutical ingredients and their expected quality for better assurance.
+        </p>
+      </div>
+    </div>
+
+
+      </div>
+    </section>
+
+    <!-- ====== WHY US SECTION ====== -->
+    <section class="px-12 sm:px-20 lg:px-40 py-24" id="why-us">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+        <!-- IMAGE -->
+        <div class="flex-1">
+          <div class="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-2xl bg-center bg-cover shadow-lg"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyreb7rmp4Res5j3U8s7Qfldsuniczx3hnHDkZaC8UVDOA-B_UBWIaotx97-Z57XDWrqNooIT0Fix_BxRnlBDZBOjYuxjg8g_coV7UAjoCij1sGm-UWADIjMnJukDHRHKiE0PMjVZnAE2Sx-6XKwTdp8e8gVi_LlFbktzwMcaR08LP1qehhpPkfmZWbRZzOPVR0BRUq6GiwO0Zh37LL6U8OAp3iJ1pZoQMP5qDMD2w4lvcaSsJw53Ao5kQ--6PGw-Vyk5xpSRKbR8");'>
           </div>
         </div>
 
-        <div class="flex items-start gap-5">
-          <span class="material-symbols-outlined text-secondary text-3xl mt-1">speed</span>
-          <div>
-            <h3 class="text-gray-900 dark:text-white text-xl font-semibold">Instant Results</h3>
-            <p class="text-gray-600 dark:text-gray-400 text-base">
-              Get a comprehensive report in seconds, right from your phone.
+        <!-- TEXT -->
+        <div class="flex-1 flex flex-col gap-8">
+          <div class="flex flex-col gap-3">
+            <h2 class="text-gray-900 dark:text-white text-4xl sm:text-5xl font-extrabold leading-tight">
+              Why Choose PurePill?
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 text-lg sm:text-xl leading-relaxed">
+              Empowering you with the knowledge to ensure your medication is safe and effective.
             </p>
           </div>
-        </div>
 
-        <div class="flex items-start gap-5">
-          <span class="material-symbols-outlined text-tertiary text-3xl mt-1">shield</span>
-          <div>
-            <h3 class="text-gray-900 dark:text-white text-xl font-semibold">User Privacy First</h3>
-            <p class="text-gray-600 dark:text-gray-400 text-base">
-              Your data is encrypted and secure. We never share your information.
-            </p>
+          <div class="space-y-6">
+            <div class="flex items-start gap-5">
+              <span class="material-symbols-outlined text-primary text-3xl mt-1">verified</span>
+              <div>
+                <h3 class="text-gray-900 dark:text-white text-xl font-semibold">Unmatched Accuracy</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-base">
+                  Powered by cutting-edge AI for reliable and precise analysis.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-5">
+              <span class="material-symbols-outlined text-secondary text-3xl mt-1">speed</span>
+              <div>
+                <h3 class="text-gray-900 dark:text-white text-xl font-semibold">Instant Results</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-base">
+                  Get a comprehensive report in seconds, right from your phone.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-5">
+              <span class="material-symbols-outlined text-tertiary text-3xl mt-1">shield</span>
+              <div>
+                <h3 class="text-gray-900 dark:text-white text-xl font-semibold">User Privacy First</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-base">
+                  Your data is encrypted and secure. We never share your information.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+
+<!-- ====== TRY IT SECTION ====== -->
+<section class="px-8 sm:px-16 lg:px-32 py-16" id="try-it">
+  <div class="rounded-xl bg-brand-green/20 dark:bg-brand-green/30 p-8 md:p-12 text-center flex flex-col items-center gap-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Ready to Verify?</h2>
+    <p class="max-w-xl text-gray-700 dark:text-gray-300">Enter your medicine details and upload photos for comprehensive analysis.</p>
+
+    <form class="w-full max-w-4xl space-y-6" id="medicine-form">
+      <!-- Medicine Name Input -->
+      <div class="text-left">
+        <label for="medicine-name" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+          Medicine Name *
+        </label>
+        <input 
+          type="text" 
+          id="medicine-name"
+          name="medicine-name"
+          required
+          placeholder="Enter the name of your medicine"
+          class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-sm focus:ring-brand-green focus:border-brand-green dark:text-white placeholder-gray-400"
+        />
+      </div>
+
+      <!-- Upload Sections Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Pill Photo Upload -->
+        <div class="upload-container">
+          <input 
+            type="file" 
+            id="pill-photo" 
+            name="pill-photo"
+            accept="image/*" 
+            class="hidden" 
+            onchange="handleFileSelect(this, 'pill-preview', 'pill-label')"
+          />
+          <label 
+            for="pill-photo" 
+            id="pill-label"
+            class="cursor-pointer p-6 border-2 border-dashed border-brand-green dark:border-brand-green/60 rounded-lg flex flex-col items-center justify-center gap-4 bg-background-light/70 dark:bg-background-dark/30 hover:bg-brand-green/5 transition-colors"
+          >
+            <span class="material-symbols-outlined text-4xl text-brand-green">pill</span>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Pill Photo</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Upload a clear photo of the pill for shape analysis</p>
+            <span class="flex items-center justify-center rounded-lg h-10 px-5 bg-brand-green text-white text-sm font-bold">
+              Upload Pill Photo
+            </span>
+            <p class="text-xs text-gray-500 dark:text-gray-400">JPG, PNG - Max 5MB</p>
+          </label>
+          <div id="pill-preview" class="mt-3 hidden">
+            <img class="max-w-full h-32 object-cover rounded-lg mx-auto" />
+            <button type="button" onclick="removeImage('pill-photo', 'pill-preview', 'pill-label')" class="mt-2 text-red-500 text-sm hover:text-red-700">
+              Remove Image
+            </button>
+          </div>
+        </div>
+
+        <!-- Expiry Date Upload -->
+        <div class="upload-container">
+          <input 
+            type="file" 
+            id="expiry-photo" 
+            name="expiry-photo"
+            accept="image/*" 
+            class="hidden" 
+            onchange="handleFileSelect(this, 'expiry-preview', 'expiry-label')"
+          />
+          <label 
+            for="expiry-photo" 
+            id="expiry-label"
+            class="cursor-pointer p-6 border-2 border-dashed border-brand-green dark:border-brand-green/60 rounded-lg flex flex-col items-center justify-center gap-4 bg-background-light/70 dark:bg-background-dark/30 hover:bg-brand-green/5 transition-colors"
+          >
+            <span class="material-symbols-outlined text-4xl text-brand-green">calendar_today</span>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Expiry Date Photo</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Upload a photo of the expiry date on the packaging</p>
+            <span class="flex items-center justify-center rounded-lg h-10 px-5 bg-brand-green text-white text-sm font-bold">
+              Upload Expiry Date
+            </span>
+            <p class="text-xs text-gray-500 dark:text-gray-400">JPG, PNG - Max 5MB</p>
+          </label>
+          <div id="expiry-preview" class="mt-3 hidden">
+            <img class="max-w-full h-32 object-cover rounded-lg mx-auto" />
+            <button type="button" onclick="removeImage('expiry-photo', 'expiry-preview', 'expiry-label')" class="mt-2 text-red-500 text-sm hover:text-red-700">
+              Remove Image
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="mt-6 rounded-lg bg-brand-green text-white px-8 py-3 text-base font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        id="analyze-btn"
+      >
+        Analyze Medicine
+      </button>
+    </form>
+
   </div>
 </section>
 
-
-  <!-- ====== TRY IT SECTION ====== -->
-  <section class="px-8 sm:px-16 lg:px-32 py-16" id="try-it">
-    <div class="rounded-xl bg-primary/10 dark:bg-primary/20 p-8 md:p-12 text-center flex flex-col items-center gap-6">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Ready to Verify?</h2>
-      <p class="max-w-xl text-gray-700 dark:text-gray-300">Upload a photo of your pill and let our AI provide instant, detailed insights.</p>
-
-      <div class="w-full max-w-lg p-6 border-2 border-dashed border-primary dark:border-primary/50 rounded-lg flex flex-col items-center justify-center gap-4 bg-background-light/50 dark:bg-background-dark/20">
-        <span class="material-symbols-outlined text-4xl text-primary">cloud_upload</span>
-        <p class="text-gray-600 dark:text-gray-400">Drag & drop a pill image here or click to upload</p>
-        <button class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold hover:opacity-90 transition">
-          Upload Image
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== SUBSCRIBE SECTION ====== -->
-  <section class="px-8 sm:px-16 lg:px-32 py-16">
-    <div class="bg-accent-peach/20 dark:bg-accent-peach/20 rounded-xl p-8 md:p-12">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div class="text-center lg:text-left">
-          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Stay Informed</h2>
-          <p class="text-gray-700 dark:text-gray-400 mt-1">Get the latest updates, health tips, and news from PurePill.</p>
-        </div>
-
-        <form class="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-          <input type="email" required placeholder="Enter your email"
-            class="w-full flex-grow rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 focus:ring-primary focus:border-primary text-sm dark:text-white" />
-          <button type="submit" class="rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold hover:opacity-90 transition">
-            Subscribe
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-<!-- ====== FOOTER SECTION ====== -->
-<footer class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700">
-  <div class="max-w-7xl mx-auto px-8 sm:px-16 lg:px-32 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<script>
+  // Handle file selection and preview
+  function handleFileSelect(input, previewId, labelId) {
+    const file = input.files[0];
+    const preview = document.getElementById(previewId);
+    const label = document.getElementById(labelId);
+    
+    if (file) {
+      // Check file size (5MB limit)
+      if (file.size > 5 * 1024 * 1024) {
+        alert('File size must be less than 5MB');
+        input.value = '';
+        return;
+      }
       
-        <!-- Logo & Tagline -->
-        <div class="col-span-2 md:col-span-1 -ml-4 sm:-ml-8 lg:-ml-12">
-        <div class="flex items-center gap-3">
-            <div class="size-7 text-primary">
-            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z"></path>
-            </svg>
+      // Check file type
+      if (!file.type.match('image.*')) {
+        alert('Please select an image file (JPG, PNG)');
+        input.value = '';
+        return;
+      }
+      
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        preview.querySelector('img').src = e.target.result;
+        preview.classList.remove('hidden');
+        label.classList.add('hidden');
+      }
+      
+      reader.readAsDataURL(file);
+    }
+    
+    updateSubmitButton();
+  }
+
+  // Remove image and reset upload area
+  function removeImage(inputId, previewId, labelId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    const label = document.getElementById(labelId);
+    
+    input.value = '';
+    preview.classList.add('hidden');
+    label.classList.remove('hidden');
+    
+    updateSubmitButton();
+  }
+
+  // Update submit button state
+  function updateSubmitButton() {
+    const medicineName = document.getElementById('medicine-name').value.trim();
+    const pillPhoto = document.getElementById('pill-photo').files[0];
+    const expiryPhoto = document.getElementById('expiry-photo').files[0];
+    const analyzeBtn = document.getElementById('analyze-btn');
+    
+    // Enable button only if all fields are filled
+    if (medicineName && pillPhoto && expiryPhoto) {
+      analyzeBtn.disabled = false;
+    } else {
+      analyzeBtn.disabled = true;
+    }
+  }
+
+  // Form submission handler
+  document.getElementById('medicine-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const medicineName = document.getElementById('medicine-name').value.trim();
+    const pillPhoto = document.getElementById('pill-photo').files[0];
+    const expiryPhoto = document.getElementById('expiry-photo').files[0];
+    
+    // Here you would typically send the data to your backend
+    console.log('Medicine Name:', medicineName);
+    console.log('Pill Photo:', pillPhoto);
+    console.log('Expiry Photo:', expiryPhoto);
+    
+    // Show success message (you can replace this with actual API call)
+    alert('Medicine analysis submitted! This would connect to your backend API in a real application.');
+    
+    // Reset form (optional)
+    // this.reset();
+    // document.querySelectorAll('[id$="-preview"]').forEach(preview => preview.classList.add('hidden'));
+    // document.querySelectorAll('[id$="-label"]').forEach(label => label.classList.remove('hidden'));
+    // updateSubmitButton();
+  });
+
+  // Update button state when medicine name changes
+  document.getElementById('medicine-name').addEventListener('input', updateSubmitButton);
+</script>
+
+<style>
+  .upload-container {
+    transition: all 0.3s ease;
+  }
+  
+  .upload-container:hover {
+    transform: translateY(-2px);
+  }
+  
+  #pill-label, #expiry-label {
+    min-height: 200px;
+  }
+</style>
+
+        <!-- ====== SUBSCRIBE SECTION ====== -->
+        <section class="px-8 sm:px-16 lg:px-32 py-16">
+          <div class="bg-brand-green/20 dark:bg-brand-green/30 rounded-xl p-8 md:p-12">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+              <div class="text-center lg:text-left">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Stay Informed</h2>
+                <p class="text-gray-700 dark:text-gray-400 mt-1">Get the latest updates, health tips, and news from PurePill.</p>
+              </div>
+
+              <form class="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+                <input type="email" required placeholder="Enter your email"
+                  class="w-full flex-grow rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-2 focus:ring-brand-green focus:border-brand-green text-sm dark:text-white" />
+                <button type="submit" class="rounded-lg h-10 px-5 bg-brand-green text-white text-sm font-bold hover:opacity-90 transition">
+                  Subscribe
+                </button>
+              </form>
             </div>
-            <h3 class="text-xl font-bold dark:text-white text-gray-900">PurePill</h3>
+          </div>
+        </section>
+      </main>
+    <!-- ====== FOOTER SECTION ====== -->
+    <footer class="bg-brand-green dark:bg-brand-green/90 text-white border-t border-brand-green/20">
+      <div class="max-w-7xl mx-auto px-8 sm:px-16 lg:px-32 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+          
+            <!-- Logo & Tagline -->
+            <div class="col-span-2 md:col-span-1 -ml-4 sm:-ml-8 lg:-ml-12">
+            <div class="flex items-center gap-3">
+                <img 
+                  src="../static/logo.png"
+                  alt="PurePill Logo" 
+                  class="h-10 w-auto"
+                />
+                <h1 class="text-xl font-bold text-white">PurePill</h1>
+            </div>
+            <p class="mt-3 text-base text-white/80">Your health, verified.</p>
+            </div>
+
+
+          <!-- Product -->
+          <div>
+            <h4 class="font-semibold tracking-wider uppercase text-white text-lg">Product</h4>
+            <ul class="mt-5 space-y-3 text-base">
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#features">Features</a></li>
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#try-it">Try It Now</a></li>
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#">Pricing</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="font-semibold tracking-wider uppercase text-white text-lg">Company</h4>
+            <ul class="mt-5 space-y-3 text-base">
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#">About Us</a></li>
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#">Blog</a></li>
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h4 class="font-semibold tracking-wider uppercase text-white text-lg">Legal</h4>
+            <ul class="mt-5 space-y-3 text-base">
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+              <li><a class="text-white/80 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+
         </div>
-        <p class="mt-3 text-base text-gray-600 dark:text-gray-400">Your health, verified.</p>
+
+        <!-- Bottom Bar -->
+        <div class="mt-12 border-t border-white/20 pt-6 text-center text-sm text-white/60">
+          <p>© 2025 PurePill. All Rights Reserved.</p>
         </div>
-
-
-      <!-- Product -->
-      <div>
-        <h4 class="font-semibold tracking-wider uppercase dark:text-white text-gray-800 text-lg">Product</h4>
-        <ul class="mt-5 space-y-3 text-base">
-          <li><a class="hover:text-primary transition-colors" href="#features">Features</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#try-it">Try It Now</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
-        </ul>
       </div>
+    </footer>
 
-      <!-- Company -->
-      <div>
-        <h4 class="font-semibold tracking-wider uppercase dark:text-white text-gray-800 text-lg">Company</h4>
-        <ul class="mt-5 space-y-3 text-base">
-          <li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div>
-        <h4 class="font-semibold tracking-wider uppercase dark:text-white text-gray-800 text-lg">Legal</h4>
-        <ul class="mt-5 space-y-3 text-base">
-          <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-6 text-center text-sm text-gray-500 dark:text-gray-400">
-      <p>© 2025 PurePill. All Rights Reserved.</p>
-    </div>
-  </div>
-</footer>
+    <script>
+      // Optional: Enhanced smooth scrolling with offset for fixed header
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
