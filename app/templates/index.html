@@ -375,6 +375,19 @@
       </button>
     </form>
 
+
+    <!-- RESULTS SECTION (VISIBLE AFTER ANALYSIS) -->
+    <div id="analysis-result" class="mt-12 hidden">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        Analysis Results
+      </h3>
+
+      <div id="result-content"
+        class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 
+               rounded-lg p-6 shadow-lg text-gray-900 dark:text-gray-200">
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -457,11 +470,75 @@ document.getElementById('medicine-form').addEventListener('submit', async functi
         body: formData
     });
 
-    const data = await response.json();
-    console.log("API Result:", data);
+    const result = await response.json();
+    console.log("API Result:", result);
 
-    alert("Analysis Result:\n" + JSON.stringify(data, null, 2));
+    // Remove popup alert
+    // alert("Analysis Result:\n" + JSON.stringify(result, null, 2));
+
+    // Populate the result section
+    const resultSection = document.getElementById("analysis-result");
+    const resultContent = document.getElementById("result-content");
+
+    if (result.success) {
+    const data = result.data;
+
+    resultContent.innerHTML = `
+        <div class="grid gap-6">
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Final Score</h4>
+                <p class="text-xl font-bold ${result.final_score >= 70 ? 'text-green-600' : 'text-red-600'}">
+                    ${result.final_score}
+                </p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Overall Status</h4>
+                <p class="text-xl font-bold ${result.status === 'PASS' ? 'text-green-600' : 'text-red-600'}">
+                    ${result.status}
+                </p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Expiry Status</h4>
+                <p class="text-lg">${data.Expiry_Status}%</p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Ingredients Match</h4>
+                <p class="text-lg">${data.Ingredients_Match}%</p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Manufacturer Reliability</h4>
+                <p class="text-lg">${data.Manufacturer_Reliability}%</p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Pill Defect Score</h4>
+                <p class="text-lg">${data.Pill_Defect_Score}</p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Physical Status</h4>
+                <p class="text-lg">${data.Pill_Physical_Status}</p>
+            </div>
+
+            <div class="p-4 border rounded-lg bg-gray-50 dark:bg-gray-700">
+                <h4 class="font-bold mb-1">Severe Side Effects Risk</h4>
+                <p class="text-lg">${data.Severe_Side_Effects}%</p>
+            </div>
+
+        </div>
+    `;
+}
+
+    // Show results
+    resultSection.classList.remove("hidden");
+    resultSection.scrollIntoView({ behavior: "smooth" });
 });
+
 
 
   // Update button state when medicine name changes
