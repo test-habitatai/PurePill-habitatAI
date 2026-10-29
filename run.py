@@ -1,6 +1,7 @@
 import numpy as np
+from typing import Any, Dict, List, Union
 
-def convert_numpy_types(obj):
+def convert_numpy_types(obj: Any) -> Any:
     if isinstance(obj, (np.integer,)):
         return int(obj)
     if isinstance(obj, (np.floating,)):
@@ -23,7 +24,7 @@ import pandas as pd
 app = Flask(__name__, template_folder="templates")
 
 @app.route("/")
-def home():
+def home() -> str:
     return render_template("index.html")
 
 @app.route("/api/check-medicine", methods=["POST"])
