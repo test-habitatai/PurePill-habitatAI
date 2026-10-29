@@ -26,6 +26,10 @@ app = Flask(__name__, template_folder="templates")
 def home():
     return render_template("index.html")
 
+@app.route("/ping", methods=["GET"])
+def ping():
+    return jsonify({"status": "ok"}), 200
+
 @app.route("/api/check-medicine", methods=["POST"])
 def check_medicine():
     medicine_name = request.form.get("medicine_name")
