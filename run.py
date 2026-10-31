@@ -30,6 +30,15 @@ def home():
 def rcb():
     return jsonify({"status": "success", "message": "RCB endpoint active"})
 
+@app.route("/pills", methods=["GET"])
+def get_pills():
+    # Placeholder for pill data
+    pills = [
+        {"id": 1, "name": "Aspirin", "manufacturer": "Bayer"},
+        {"id": 2, "name": "Amoxicillin", "manufacturer": "GSK"}
+    ]
+    return jsonify({"success": True, "data": pills})
+
 @app.route("/api/check-medicine", methods=["POST"])
 def check_medicine():
     medicine_name = request.form.get("medicine_name")
