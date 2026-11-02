@@ -39,6 +39,15 @@ def get_pills():
     ]
     return jsonify({"success": True, "data": pills})
 
+@app.route("/medicinestore", methods=["GET"])
+def medicinestore():
+    # Placeholder for medicine store data
+    stores = [
+        {"id": 1, "name": "City Pharmacy", "location": "Downtown"},
+        {"id": 2, "name": "Health Plus", "location": "Uptown"}
+    ]
+    return jsonify({"success": True, "data": stores})
+
 @app.route("/api/check-medicine", methods=["POST"])
 def check_medicine():
     medicine_name = request.form.get("medicine_name")
