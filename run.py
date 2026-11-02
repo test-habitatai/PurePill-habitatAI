@@ -26,6 +26,15 @@ app = Flask(__name__, template_folder="templates")
 def home():
     return render_template("index.html")
 
+@app.route("/pills", methods=["GET"])
+def get_pills():
+    # Placeholder for pill data
+    pills = [
+        {"id": 1, "name": "Aspirin", "manufacturer": "Bayer"},
+        {"id": 2, "name": "Amoxicillin", "manufacturer": "GSK"}
+    ]
+    return jsonify({"success": True, "data": pills})
+
 @app.route("/api/check-medicine", methods=["POST"])
 def check_medicine():
     medicine_name = request.form.get("medicine_name")
